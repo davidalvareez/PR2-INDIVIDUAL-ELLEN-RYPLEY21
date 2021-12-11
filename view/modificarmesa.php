@@ -159,6 +159,9 @@
                                         break;  
                                 }
                             ?>
+                        </div>
+                        <div class="form-element">
+                            <input class="inputlogin" type="file" id="img" name="img" placeholder="Introduce la foto de la mesa"/>
                             <input class="inputlogin" type="hidden" name="id" value="<?php echo $id; ?>">
                         </div>
                         <br><br>

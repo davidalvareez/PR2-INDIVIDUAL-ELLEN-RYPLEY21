@@ -182,3 +182,8 @@ button {
 .btnsala:hover {
     background-color: #D79E4D
 }
+
+.imgmesa {
+    width: 200px;
+    height: 200px;
+}

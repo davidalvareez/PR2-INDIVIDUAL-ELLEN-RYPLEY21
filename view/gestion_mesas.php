@@ -19,6 +19,7 @@
 </head>
 <body>
     <h1 class="h1_eventos">LISTA DE MESAS</h1>
+    <button class="botonmodif" onclick="location.href='../view/crearmesa.php'">Crear mesa</button>
     <form action="../view/gestion_mesas.php" method="POST">
         <input type="text" class="inputfiltro" name="nombresala" placeholder="Indica el nombre de sala">
         <input type="submit" class="botonfiltro"value="Filtrar" name="filtrar"> 
@@ -27,7 +28,7 @@
     <?php
     if (isset($_POST['filtrar'])){
         //Si le hemos dado al boton de filtrar añadimos la sentencia del filtro mediante DNI ya que es único
-        $mesa=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.capacidad, tbl_mesa.estado , tbl_sala.nom_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_mesa.id_sala = tbl_sala.id_sala WHERE tbl_sala.nom_sala LIKE '%{$_POST['nombresala']}%'");
+        $mesa=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.capacidad, tbl_mesa.estado, tbl_mesa.img, tbl_sala.nom_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_mesa.id_sala = tbl_sala.id_sala WHERE tbl_sala.nom_sala LIKE '%{$_POST['nombresala']}%'");
         $mesa->execute();
         $mesas=$mesa->fetchAll(PDO::FETCH_ASSOC);
         if (empty($mesas)) {
@@ -44,7 +45,7 @@
         }
     }else{
         //Sin filtro simplemente mostramos todos los mesas
-        $mesa=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.capacidad, tbl_mesa.estado , tbl_sala.nom_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_mesa.id_sala = tbl_sala.id_sala");
+        $mesa=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.capacidad, tbl_mesa.estado , tbl_mesa.img, tbl_sala.nom_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_mesa.id_sala = tbl_sala.id_sala");
         $mesa->execute();
         $mesas=$mesa->fetchAll(PDO::FETCH_ASSOC);
         if (empty($mesas)) {
@@ -66,6 +67,7 @@
             foreach ($mesas as $row) {
         ?>
         <tr>
+            <td class="tdmesas"><img class='imgmesa' src= "<?php echo "{$row['img']}";?>"></td>
             <td class="tdmesas"><?php echo "{$row['capacidad']}";?></td>
             <td class="tdmesas"><?php echo "{$row['estado']}";?></td>
             <td class="tdmesas"><?php echo "{$row['nom_sala']}";?></td>
