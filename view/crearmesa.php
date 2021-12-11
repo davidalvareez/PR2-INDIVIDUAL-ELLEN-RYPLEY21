@@ -16,14 +16,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../js/validacion_login.js"></script>
+    <script src="../js/validacion.js"></script>
     <title>Modificar</title>
 </head>
 <body class="fondoimg2">
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_modificar_evento">
-                <form class="formulario_inscripcion"  action="../process/crearmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return eventos()">
+                <form class="formulario_inscripcion"  action="../process/crearmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validarCrearMesa()">
                     <h1 class="h1login">Formulario crear evento</h1>
                         <br>
                         <div class="form-element">
@@ -31,7 +31,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <select class="inputlogin" name="estado">
+                            <select class="inputlogin" id="estado" name="estado">
                                 <option value="Libre">Libre</option>
                                 <option value="Ocupada">Ocupada</option>
                                 <option value="Mantenimiento">Mantenimiento</option>
@@ -39,7 +39,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <select class="inputlogin" name="nombresala">
+                            <select class="inputlogin" id="nombresala" name="nombresala">
                                 <option value="1">Sala 2</option>
                                 <option value="2">Sala 4</option>
                                 <option value="3">Sala 6</option>

@@ -18,8 +18,14 @@
     <title>Vista de usuarios</title>
 </head>
 <body>
+<table class="tablaadmin">
+        <td class="menu_crear_logout">
+            <button class="botongeneral" onclick="location.href='../view/control_administrador.php'">Volver sala control</button>
+            <button class="botongeneral" onclick="location.href='../view/crearempleado.php'">Crear usuario</button>
+            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
+        </td>
+    </table>
     <h1 class="h1_eventos">LISTA DE PARTICIPANTES</h1>
-    <button class="botonmodif" onclick="location.href='../view/crearempleado.php'">Crear usuario</button>
     <form action="../view/gestion_usuarios.php" method="POST">
         <input type="text" class="inputfiltro" name="nombre" placeholder="Indica el nombre">
         <input type="text" class="inputfiltro" name="apellido" placeholder="Indica el apellido">

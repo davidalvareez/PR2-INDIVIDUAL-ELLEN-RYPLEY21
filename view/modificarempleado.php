@@ -24,14 +24,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="../js/validacion_login.js"></script>
+    <script src="../js/validacion.js"></script>
     <title>Modificar empleado</title>
 </head>
 <body class="fondoimg2">
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_modificar_voluntario">
-                <form class="formulario_inscripcion"  action="../process/modificarempleado.proc.php" method="post" enctype="multipart/form-data" onsubmit="return eventos()">
+                <form class="formulario_inscripcion"  action="../process/modificarempleado.proc.php" method="post" onsubmit="return validarModificarUser()">
                     <h1 class="h1login">¡Formulario modificar empleado!</h1>
                         <br>
                         <?php
@@ -68,7 +68,7 @@
                     <button class="botonlogin" type="submit" name="login" value="login">Modificar empleado</button>
                     <br><br>
                 </form>
-                <button class="botonloginvolver" onclick="location.href='../process/gestion_usuarios.php'" type="submit" name="volver" value="volver">Volver a la lista de usuarios</button>
+                <button class="botonloginvolver" onclick="location.href='../view/gestion_usuarios.php'" type="submit" name="volver" value="volver">Volver a la lista de usuarios</button>
             </div>
         </div>
     </div>

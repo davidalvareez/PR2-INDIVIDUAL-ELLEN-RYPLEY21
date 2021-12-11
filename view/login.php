@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/validacion_login.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/validacion.js"></script>
 </head>
 <body class="login">
         <div class="row flex-cv">
             <div class="cuadro_login">
-                <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validar();">
+                <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validarLogin();">
                     <h1 class="h1login">Inicio de Sesión</h1>
                     <br>
                     <div class="form-element">

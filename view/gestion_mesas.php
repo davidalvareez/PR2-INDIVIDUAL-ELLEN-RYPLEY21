@@ -18,8 +18,14 @@
     <title>Vista de mesa</title>
 </head>
 <body>
+    <table class="tablaadmin">
+        <td class="menu_crear_logout">
+            <button class="botongeneral" onclick="location.href='../view/control_administrador.php'">Volver sala control</button>
+            <button class="botongeneral" onclick="location.href='../view/crearmesa.php'">Crear mesa</button>
+            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
+        </td>
+    </table>
     <h1 class="h1_eventos">LISTA DE MESAS</h1>
-    <button class="botonmodif" onclick="location.href='../view/crearmesa.php'">Crear mesa</button>
     <form action="../view/gestion_mesas.php" method="POST">
         <input type="text" class="inputfiltro" name="nombresala" placeholder="Indica el nombre de sala">
         <input type="submit" class="botonfiltro"value="Filtrar" name="filtrar"> 
@@ -37,6 +43,7 @@
         }else{
             ?>
             <tr>
+                <th>Imagen mesa</th>
                 <th>Capacidad</th>
                 <th>Estado</th>
                 <th>Nombre sala</th>
@@ -54,6 +61,7 @@
         }else{
             ?>
                 <tr>
+                    <th>Imagen mesa</th>
                     <th>Capacidad</th>
                     <th>Estado</th>
                     <th>Nombre sala</th>

@@ -124,6 +124,18 @@ button {
     outline: none;
 }
 
+.inputfiltro {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #4D9C87;
+    background-color: #F7F6FB;
+    outline: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
 .botonlogin {
     width: 300px;
     height: 45px;
@@ -146,6 +158,118 @@ button {
     border-radius: 7px;
     border-color: whitesmoke;
     background-color: violet;
+}
+
+.botongeneral {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #4D9C87;
+    background-color: #F7F6FB;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    color: black;
+}
+
+.botongeneral:hover {
+    background: #4D9C87;
+    color: #fff !important;
+}
+
+.botonlogin {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: #e6dbd5;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.botonlogin:hover {
+    background: #D4233F;
+    color: #fff !important;
+}
+
+.botonloginvolver {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #1564cc;
+    background-color: #e6dbd5;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.botonloginvolver:hover {
+    background: #1564cc;
+    color: #fff !important;
+}
+
+.botonhistorial {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: whitesmoke;
+    background-color: violet;
+}
+
+.botoneliminar {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    color: black;
+}
+
+.botoneliminar:hover {
+    background: #D4233F;
+    color: #fff !important;
+}
+
+.botonmodif {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #1564cc;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    color: black;
+}
+
+.botonmodif:hover {
+    background: #1564cc;
+    color: #fff !important;
+}
+
+.botonfiltro {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #4D9C87;
+    background-color: #F7F6FB;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    color: black;
+}
+
+.botonfiltro:hover {
+    background: #4D9C87;
+    color: #fff !important;
 }
 
 .mensajelogin {
