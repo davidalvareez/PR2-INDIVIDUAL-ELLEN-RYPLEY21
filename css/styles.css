@@ -37,14 +37,21 @@ button {
 }
 
 
+/*Containers*/
+
+.containerLoginDer {
+    height: 100%;
+}
+
+
 /*Estilos*/
 
 .cuadro_login {
-    height: 500px;
+    margin-top: 3%;
     width: 650px;
-    border: 5px solid var(--marron1);
-    background: #FEE1D3;
-    border-color: #271301;
+    height: 500px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
 }
 
 .cuadro_control_sala {
@@ -111,16 +118,15 @@ button {
 }
 
 .formulario_login {
-    height: 100%;
-    padding: 10%;
+    padding: 6%;
 }
 
 .inputlogin {
     width: 300px;
     height: 45px;
     border-radius: 7px;
-    border-color: pink;
-    background-color: blanchedalmond;
+    border-color: #D4233F;
+    background-color: #e6dbd5;
     outline: none;
 }
 

@@ -10,25 +10,38 @@
     <script src="../js/validacion.js"></script>
 </head>
 <body class="login">
-        <div class="row flex-cv">
-            <div class="cuadro_login">
-                <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validarLogin();">
-                    <h1 class="h1login">Inicio de Sesión</h1>
-                    <br>
-                    <div class="form-element">
-                        <input class="inputlogin" type="text" id="username" name="username" placeholder="Usuario..."/>
+    <div class="contenidosBody">
+        <table>
+            <tr>
+                <td class="column-2">
+                    <div class="containerLoginIzq">
+                        <div class="row flex-cv">
+                            <div class="cuadro_login">
+                                <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validarLogin();">
+                                    <h1 class="h1login">Inicio de Sesión</h1>
+                                    <br>
+                                    <div class="form-element">
+                                        <input class="inputlogin" type="text" id="username" name="username" placeholder="Usuario..."/>
+                                    </div>
+                                    <br>
+                                    <div class="form-element">
+                                        <input class="inputlogin" type="password" id="password" name="password" placeholder="Contraseña..."/>
+                                    </div>
+                                    <br><br>
+                                    <button class= "botonlogin" type="submit" name="register" value="register">Iniciar Sesión</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <br>
-                    <div class="form-element">
-                        <input class="inputlogin" type="password" id="password" name="password" placeholder="Contraseña..."/>
+                </td>
+                <td class="column-2">
+                    <div class="containerLoginDer">
+                        <h1>LA MASIA</h1>
+                        <h2>LA MASIASEWRQWYRUWQYERUIQYWRIUWQ</h2>
                     </div>
-                    <br><br>
-                    <button class= "botonlogin" type="submit" name="register" value="register">Iniciar Sesión</button>
-                    <br><br>
-                    <div class="mensajelogin" id="mensaje"></div>
-                </form>
-            </div>
-        </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
-
 </html>

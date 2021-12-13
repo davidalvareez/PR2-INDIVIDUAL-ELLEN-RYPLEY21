@@ -15,11 +15,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="../css/styles.css">
-            <title>Mesas Sala <?php echo $id_sala ?></title>
+            <title>Historial reservas sala <?php echo $id_sala ?></title>
         </head>
         <body class="fondosala2">
             <br>
-            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Historial</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Volver al panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button><button type="submit" OnClick="location.href='../process/reservas.php?id_sala=<?php echo $id_sala; ?>'" class="botonessala">Historial</button></form>
+            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Historial</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Volver al panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button><button type="submit" class="botonessala">Historial</button></form>
             <br> <br>
             <div class="row flex-cv">
                 <div class="cuadro-figura">
@@ -44,15 +44,13 @@
                             <td><?php echo "{$registro['fechareserva']}";?></td>
                             <td><form method="GET" action="../process/recibir_estado.php">
                                 <select name="select">
-                                    <option value="Activa">Activa</option>
+                                    <option value="Ocupado">Ocupado</option>
+                                    <option value="Libre" selected>Libre</option>
                                     <option value="Mantenimiento">Mantenimiento</option>
                                 </select>
                                 <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </form></td>
-                            <td>
-                                <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
-                            </td>
                         </tr>
                         <?php } ?>
                     </table>
