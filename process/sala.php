@@ -24,7 +24,7 @@
             <div class="row flex-cv">
                 <div class="cuadro-figura">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.estado, tbl_mesa.id_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id_sala ");
+                        $sentencia=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.estado, tbl_mesa.fechareserva, tbl_mesa.id_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id_sala ");
                         $sentencia->execute();          
                     ?>
                     <br><h2>Información Mesas</h2>
@@ -32,6 +32,7 @@
                         <tr class="active">
                             <th>MESA</th>
                             <th>ESTADO</th>
+                            <th>FECHA RESERVA</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -40,6 +41,7 @@
                         <tr>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td><?php echo "{$registro['estado']}";?></td>
+                            <td><?php echo "{$registro['fechareserva']}";?></td>
                             <td><form method="GET" action="../process/recibir_estado.php">
                                 <select name="select">
                                     <option value="Ocupado">Ocupado</option>
