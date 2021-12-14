@@ -18,12 +18,12 @@
         </head>
         <body class="fondosala2">
             <br>
-            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Historial</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Volver al panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button><button type="submit" class="botonessala">Historial</button></form>
+            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Historial</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Volver al panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button><button class="botonessala" onclick="location.href='../view/crearreserva.php?id_mesa= <?php echo $id_mesa?>'">Crear reserva</button></form>
             <br> <br>
             <div class="row flex-cv">
                 <div class="cuadro-figura">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT id_reserva, data_reserva, hora_reserva, hora_fi_reserva, id_mesa FROM tbl_reserva WHERE id_mesa= $id_mesa");
+                        $sentencia=$pdo->prepare("SELECT id_reserva, DATE_FORMAT(data_reserva,'%d/%m/%Y') AS data_reserva, TIME_FORMAT(hora_reserva,'%H:%i') AS `hora_reserva` , TIME_FORMAT(hora_fi_reserva,'%H:%i') AS `hora_fi_reserva`, id_mesa FROM tbl_reserva WHERE id_mesa= $id_mesa");
                         $sentencia->execute();          
                     ?>
                     <br><h2>Reservas</h2>
@@ -32,6 +32,7 @@
                             <th>FECHA RESERVA</th>
                             <th>HORA INICIO RESERVA</th>
                             <th>HORA FIN RESERVA</th>
+                            <th>ELIMINAR RESERVA</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
