@@ -32,7 +32,8 @@
                         <tr class="active">
                             <th>MESA</th>
                             <th>ESTADO</th>
-                            <th>FECHA RESERVA</th>
+                            <th>CAMBIAR ESTADO</th>
+                            <th>LISTADO DE RESERVAS</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +42,6 @@
                         <tr>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td><?php echo "{$registro['estado']}";?></td>
-                            <td><?php echo "{$registro['fechareserva']}";?></td>
                             <td><form method="GET" action="../process/recibir_estado.php">
                                 <select name="select">
                                     <option value="Activa">Activa</option>
@@ -49,10 +49,15 @@
                                 </select>
                                 <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="hidden" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
                             </form></td>
+                            <form method="GET" action="../process/reservas.php">
                             <td>
-                                <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
+                                <button class= "boton" onclick="location.href='../process/reservas.php?id_mesa=<?php echo $registro['id_mesa']; ?>'" type="submit" name="Enviar" value="Enviar">Ver reservas</button>
+                                <input type="hidden" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
+                                <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </td>
+                            </form>
                         </tr>
                         <?php } ?>
                     </table>

@@ -14,6 +14,12 @@
         <table>
             <tr>
                 <td class="column-2">
+                    <div class="containerLoginDer">
+                        <h1>LA MASIA</h1>
+                        <h2>LA MASIASEWRQWYRUWQYERUIQYWRIUWQ</h2>
+                    </div>
+                </td>
+                <td class="column-2">
                     <div class="containerLoginIzq">
                         <div class="row flex-cv">
                             <div class="cuadro_login">
@@ -32,12 +38,6 @@
                                 </form>
                             </div>
                         </div>
-                    </div>
-                </td>
-                <td class="column-2">
-                    <div class="containerLoginDer">
-                        <h1>LA MASIA</h1>
-                        <h2>LA MASIASEWRQWYRUWQYERUIQYWRIUWQ</h2>
                     </div>
                 </td>
             </tr>

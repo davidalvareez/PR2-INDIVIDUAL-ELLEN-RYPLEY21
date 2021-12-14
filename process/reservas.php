@@ -3,9 +3,8 @@
     session_start();
     /* Controla que la sesión esté iniciada */
     if (!$_SESSION['nombre']=="") {
-        $id_sala=$_GET['id_sala'];
-        // echo $id_sala;
-        // die; ?>
+        $id_mesa=$_GET['id_mesa'];
+?>
         
         <!DOCTYPE html>
         <html lang="en">
@@ -15,7 +14,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
             <link rel="stylesheet" href="../css/styles.css">
-            <title>Historial reservas sala <?php echo $id_sala ?></title>
+            <title>Historial reservas mesa <?php echo $id_mesa ?></title>
         </head>
         <body class="fondosala2">
             <br>
@@ -24,32 +23,29 @@
             <div class="row flex-cv">
                 <div class="cuadro-figura">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.estado, tbl_mesa.fechareserva, tbl_mesa.id_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id_sala ");
+                        $sentencia=$pdo->prepare("SELECT id_reserva, data_reserva, hora_reserva, hora_fi_reserva, id_mesa FROM tbl_reserva WHERE id_mesa= $id_mesa");
                         $sentencia->execute();          
                     ?>
-                    <br><h2>Información Mesas</h2>
+                    <br><h2>Reservas</h2>
                     <table class="table table-striped table-bordered table-sm">
                         <tr class="active">
-                            <th>MESA</th>
-                            <th>ESTADO</th>
                             <th>FECHA RESERVA</th>
+                            <th>HORA INICIO RESERVA</th>
+                            <th>HORA FIN RESERVA</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                             foreach($listaMesas as $registro){ 
                         ?>
                         <tr>
-                            <td><?php echo "{$registro['id_mesa']}";?></td>
-                            <td><?php echo "{$registro['estado']}";?></td>
-                            <td><?php echo "{$registro['fechareserva']}";?></td>
-                            <td><form method="GET" action="../process/recibir_estado.php">
-                                <select name="select">
-                                    <option value="Ocupado">Ocupado</option>
-                                    <option value="Libre" selected>Libre</option>
-                                    <option value="Mantenimiento">Mantenimiento</option>
-                                </select>
-                                <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
+                            <td><?php echo "{$registro['data_reserva']}";?></td>
+                            <td><?php echo "{$registro['hora_reserva']}";?></td>
+                            <td><?php echo "{$registro['hora_fi_reserva']}";?></td>
+                            <td><form method="GET" action="../process/eliminar_reserva.php">
+                                <button class= "boton" type="submit" name="Enviar" value="Enviar">Eliminar</button>
+                                <input type="hidden" name="id_reserva" value="<?php echo "{$registro['id_reserva']}";?>">
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="hidden" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
                             </form></td>
                         </tr>
                         <?php } ?>
