@@ -10,18 +10,14 @@
 <body class="control_sala">
     <div class="row flex-cv">
         <div class="cuadro_control_sala">
-            <div class="columnusuario">
-                <h2 class="nombreusuario">Bienvenido</h2>
-            </div>
-            <br><br>
+            <h1 class="h1_control_sala">Panel de control administrador</h1>
             <div class="column-2">
-                <button class="btnsala" OnClick="location.href='../view/gestion_usuarios.php'"><h1>Gestión de usuarios</h1></button>
-            </div>
+                <button class="boton_control_sala" OnClick="location.href='../view/gestion_usuarios.php'"><h1>Gestión de usuarios</button>                    </div>
             <div class="column-2">
-            <button class="btnsala" OnClick="location.href='../view/gestion_mesas.php'"><h1>Gestión de salas</h1></button>
+                <button class="boton_control_sala" OnClick="location.href='../view/gestion_mesas.php'"><h1>Gestión de mesas</h1></button>
             </div>
             <div class="column">
-                <button class="btnsala" OnClick="location.href='../process/incidenciamantenimiento.php'"><h1>Gestión de incidencias</h1></button>
+                <button class="boton_control_sala" OnClick="location.href='../process/logout.proc.php'"><h1>Logout</h1></button>
             </div>
         </div>
     </div>

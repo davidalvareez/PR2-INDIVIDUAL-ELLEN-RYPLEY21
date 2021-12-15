@@ -1,7 +1,9 @@
+/*Estilos globales*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
     box-sizing: border-box;
-    /* font family */
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -11,20 +13,6 @@ body {
     padding: 10% 20px;
     text-align: center;
 }
-
-:root {
-    --marron1: #271301;
-}
-
-
-/*Estilos Buttones*/
-
-button {
-    float: center;
-}
-
-
-/* Clear floats after the columns */
 
 .row:after {
     content: "";
@@ -36,41 +24,6 @@ button {
     background-color: #ffcb85;
 }
 
-
-/*Containers*/
-
-.containerLoginDer {
-    height: 100%;
-}
-
-
-/*Estilos*/
-
-.cuadro_login {
-    margin-top: 3%;
-    width: 650px;
-    height: 500px;
-    border: 5px solid #D4233F;
-    background: #E7E2CB;
-}
-
-.cuadro_control_sala {
-    height: 924px;
-    width: 650px;
-    border: 5px solid var(--marron1);
-    background: #EDC696;
-    border-color: #271301;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.cuadro-figura {
-    height: 350px;
-    width: 650px;
-    border: 5px solid var(--azul1);
-    background: #c1b4d1;
-}
-
 .flex-cv {
     display: flex;
     justify-content: center;
@@ -79,214 +32,95 @@ button {
     align-items: center;
 }
 
+.imgmesa {
+    width: 200px;
+    height: 200px;
+}
 
-/*
-.logout_salas {
-    float: right;
-}*/
+
+/*Estilos login*/
 
 .login {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     background-image: url("../img/img_login.jpg");
 }
 
+.contenidosLogin table {
+    height: 100%;
+    width: 100%;
+    margin-top: 100px;
+    padding-right: 60px;
+}
+
+.contenidosLogin td {
+    width: 50%;
+    height: 100%;
+}
+
+.cuadro_login {
+    height: 500px;
+    width: 700px;
+    border: 7px solid #724E2D;
+    background: #724e2de7;
+    padding-top: 10px;
+}
+
+.h1_login {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 35px;
+}
+
+.input_login {
+    width: 250px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: white;
+    outline: none;
+}
+
+.boton_login {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.boton_login:hover {
+    background: saddlebrown;
+    color: #fff !important;
+}
+
+
+/*FIN estilos login*/
+
+
+/*Estilos control sala*/
+
 .control_sala {
+    width: 100%;
+    height: 100%;
     background-image: url("../img/img_control_sala.jpg");
 }
 
-.fondosala2 {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.fondosala4 {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.fondosala6 {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.fondosala8 {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.fondosala10 {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.fondoreservado {
-    background-image: url("../img/img_reserva.jpg");
-}
-
-.formulario_login {
-    padding: 6%;
-}
-
-.inputlogin {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #D4233F;
-    background-color: #e6dbd5;
-    outline: none;
-}
-
-.inputfiltro {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #4D9C87;
-    background-color: #F7F6FB;
-    outline: none;
-    margin-top: 20px;
-    margin-right: 10px;
-    margin-bottom: 50px;
-}
-
-.botonlogin {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: palevioletred;
-    background-color: blanchedalmond;
-}
-
-.botonessala {
-    width: 200px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: whitesmoke;
-    background-color: violet;
-}
-
-.botonhistorial {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: whitesmoke;
-    background-color: violet;
-}
-
-.botongeneral {
-    width: 150px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #4D9C87;
-    background-color: #F7F6FB;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    color: black;
-}
-
-.botongeneral:hover {
-    background: #4D9C87;
-    color: #fff !important;
-}
-
-.botonlogin {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #D4233F;
-    background-color: #e6dbd5;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    position: relative;
-}
-
-.botonlogin:hover {
-    background: #D4233F;
-    color: #fff !important;
-}
-
-.botonloginvolver {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #1564cc;
-    background-color: #e6dbd5;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    position: relative;
-}
-
-.botonloginvolver:hover {
-    background: #1564cc;
-    color: #fff !important;
-}
-
-.botonhistorial {
-    width: 300px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: whitesmoke;
-    background-color: violet;
-}
-
-.botoneliminar {
-    width: 150px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #D4233F;
-    background-color: white;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    position: relative;
-    color: black;
-}
-
-.botoneliminar:hover {
-    background: #D4233F;
-    color: #fff !important;
-}
-
-.botonmodif {
-    width: 150px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #1564cc;
-    background-color: white;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    position: relative;
-    color: black;
-}
-
-.botonmodif:hover {
-    background: #1564cc;
-    color: #fff !important;
-}
-
-.botonfiltro {
-    width: 150px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: #4D9C87;
-    background-color: #F7F6FB;
-    font-size: 15px;
-    font-weight: 500;
-    transition: all 0.5s ease;
-    color: black;
-}
-
-.botonfiltro:hover {
-    background: #4D9C87;
-    color: #fff !important;
-}
-
-.mensajelogin {
-    color: red;
-    font-size: 20px;
-    text-decoration: underline;
-}
-
-.column-3 {
-    float: left;
-    width: 33.3%;
+.cuadro_control_sala {
+    height: auto;
+    width: 1000px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 5px solid rgb(46, 21, 3);
+    background: #EDC696;
 }
 
 .column-2 {
@@ -300,20 +134,340 @@ button {
     height: 16.7%;
 }
 
-.btnsala {
+.boton_control_sala {
     width: 100%;
     height: 200px;
-    background-color: #e9cfaed8;
-    border-style: outset;
     border-radius: 5px;
+    border-style: outset;
     border-color: #271301d5;
+    background-color: #e9cfaed8;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    position: relative;
 }
 
-.btnsala:hover {
-    background-color: #D79E4D
+.boton_control_sala:hover {
+    background: saddlebrown;
+    color: #fff !important;
 }
 
-.imgmesa {
-    width: 200px;
-    height: 200px;
+.h1_control_sala {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 35px;
+}
+
+
+/*FIN estilos control sala*/
+
+
+/*Estilos Salas*/
+
+.sala {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/img_sala.jpg");
+}
+
+.contenedor_botones_principales_sala {
+    height: 100%;
+    margin-top: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.boton_sala {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.boton_sala:hover {
+    background: saddlebrown;
+    color: #fff !important;
+}
+
+.cuadro_sala {
+    height: 400px;
+    width: auto;
+    background: #e9d0ae;
+    border: 5px solid saddlebrown;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.tabla_sala {
+    width: 100%;
+    height: 100%;
+}
+
+.h1_sala {
+    padding-top: 120px;
+    font-size: 30px;
+}
+
+.select_sala {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: rgba(153, 93, 50, 0.712);
+    outline: none;
+    font-size: 15px;
+}
+
+.boton_confirmar_sala {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.boton_confirmar_sala:hover {
+    background: saddlebrown;
+    color: #fff !important;
+}
+
+.fondo_sala {
+    background-image: url("../img/img_sala.jpg");
+    overflow: hidden;
+}
+
+
+/*FIN estilos sala*/
+
+
+/*Estilos reserva*/
+
+.reserva {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: url("../img/img_reserva.jpg");
+}
+
+.cuadro_reserva {
+    min-height: 200px;
+    width: 1000px;
+    background: #e9d0ae;
+    border: 5px solid saddlebrown;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.tabla_reserva {
+    width: 100%;
+    height: 100%;
+}
+
+.boton_eliminar_reserva {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_eliminar_reserva:hover {
+    background: red;
+    color: #fff !important;
+}
+
+
+/*FIN estilos reserva */
+
+
+/*Estilos gestion users*/
+
+.cuadro_users {
+    height: auto;
+    width: auto;
+    background: #e9d0ae;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 5px solid saddlebrown;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.tabla_users {
+    width: 100%;
+    height: 100%;
+}
+
+.boton_modificar_user {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_modificar_user:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_eliminar_user {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_eliminar_user:hover {
+    background: red;
+    color: #fff !important;
+}
+
+.boton_filtrar_user {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_filtrar_user:hover {
+    background-color: saddlebrown;
+    color: #fff !important;
+}
+
+.input_filtro {
+    width: 250px;
+    height: 45px;
+    font-size: 15px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: white;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+/*FIN gestion users*/
+
+
+/*Estilos gestion mesas*/
+
+.cuadro_mesas {
+    height: auto;
+    width: auto;
+    background: #e9d0ae;
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 5px solid saddlebrown;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.tabla_mesas {
+    width: 100%;
+    height: 100%;
+}
+
+.boton_modificar_mesa {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_modificar_mesa:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_eliminar_mesa {
+    width: 250px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: saddlebrown;
+    background-color: #e9d0ae;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_eliminar_mesa:hover {
+    background: red;
+    color: #fff !important;
+}
+
+
+/*Fin estilos mesa*/
+
+
+/*Estillos formularios mesa user*/
+
+.cuadro_formulario_mesa_user {
+    height: 300;
+    width: 600px;
+    background: #e9d0ae;
+    margin-top: 100px;
+    margin-left: 300px;
+    border: 5px solid saddlebrown;
+    align-items: center;
+    align-content: center;
+    text-align: center;
 }

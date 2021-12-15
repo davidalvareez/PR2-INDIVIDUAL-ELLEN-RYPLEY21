@@ -17,74 +17,80 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Vista de usuarios</title>
 </head>
-<body>
-<table class="tablaadmin">
-        <td class="menu_crear_logout">
-            <button class="botongeneral" onclick="location.href='../view/control_administrador.php'">Volver sala control</button>
-            <button class="botongeneral" onclick="location.href='../view/crearempleado.php'">Crear usuario</button>
-            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
+<body class="sala">
+    <table class="contenedor_botones_principales_sala">
+        <td>
+            <button class="boton_sala" onclick="location.href='../view/control_administrador.php'">Volver al panel control</button>
+            <button class="boton_sala" onclick="location.href='../view/crearempleado.php'">Crear usuario</button>
+            <button class="boton_sala" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
         </td>
     </table>
-    <h1 class="h1_eventos">LISTA DE PARTICIPANTES</h1>
-    <form action="../view/gestion_usuarios.php" method="POST">
-        <input type="text" class="inputfiltro" name="nombre" placeholder="Indica el nombre">
-        <input type="text" class="inputfiltro" name="apellido" placeholder="Indica el apellido">
-        <input type="submit" class="botonfiltro"value="Filtrar" name="filtrar"> 
-    </form>
-    <table class="tabla_principal">
-    <?php
-    if (isset($_POST['filtrar'])){
-        //Si le hemos dado al boton de filtrar añadimos la sentencia del filtro mediante DNI ya que es único
-        $empleado=$pdo->prepare("SELECT * FROM tbl_empleado WHERE nombre_emp LIKE '%{$_POST['nombre']}%' AND apellido_emp LIKE '%{$_POST['apellido']}%'");
-        $empleado->execute();
-        $empleados=$empleado->fetchAll(PDO::FETCH_ASSOC);
-        if (empty($empleados)) {
-            //En caso que el filtro encuentre vacio mostrará lo siguiente y en caso contrario el header de la tabla
-            echo "<h1>No se ha encontrado ningun usuario</h1>";
-        }else{
-            ?>
-            <tr>
-                <th>DNI</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Tipo Empleado</th>
-            </tr>
-             <?php
-        }
-    }else{
-        //Sin filtro simplemente mostramos todos los empleados
-        $empleado=$pdo->prepare("SELECT * FROM tbl_empleado");
-        $empleado->execute();
-        $empleados=$empleado->fetchAll(PDO::FETCH_ASSOC);
-        if (empty($empleados)) {
-            //Y en caso de la página aún no haya ningun empleado mostramos que no hay y si hay mostramos encabezado de tabla
-            echo "<h1>No hay ningun usuario</h1>";
-        }else{
-            ?>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Tipo Empleado</th>
-            </tr>
-             <?php
-        }
-    }
-    ?>
+    <h1 class="h1_sala">LISTA DE PARTICIPANTES</h1>
+    <div class="cuadro_users">
+        <form action="../view/gestion_usuarios.php" method="POST">
+            <input type="text" class="input_filtro" name="nombre" placeholder="Indica el nombre">
+            <input type="text" class="input_filtro" name="apellido" placeholder="Indica el apellido">
+            <input type="submit" class="boton_filtrar_user"value="Filtrar" name="filtrar"> 
+        </form>
+        <table class="tabla_users">
         <?php
-        //Mostramos todos los datos
-            foreach ($empleados as $row) {
+        if (isset($_POST['filtrar'])){
+            //Si le hemos dado al boton de filtrar añadimos la sentencia del filtro mediante DNI ya que es único
+            $empleado=$pdo->prepare("SELECT * FROM tbl_empleado WHERE nombre_emp LIKE '%{$_POST['nombre']}%' AND apellido_emp LIKE '%{$_POST['apellido']}%'");
+            $empleado->execute();
+            $empleados=$empleado->fetchAll(PDO::FETCH_ASSOC);
+            if (empty($empleados)) {
+                //En caso que el filtro encuentre vacio mostrará lo siguiente y en caso contrario el header de la tabla
+                echo "<h1>No se ha encontrado ningun usuario</h1>";
+            }else{
+                ?>
+                <tr>
+                    <th>DNI</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>TIPO EMPLEADO</th>
+                    <th>MODIFICAR USUARIO</th>
+                    <th>ELIMINAR USUARIO</th>
+                </tr>
+                 <?php
+            }
+        }else{
+            //Sin filtro simplemente mostramos todos los empleados
+            $empleado=$pdo->prepare("SELECT * FROM tbl_empleado");
+            $empleado->execute();
+            $empleados=$empleado->fetchAll(PDO::FETCH_ASSOC);
+            if (empty($empleados)) {
+                //Y en caso de la página aún no haya ningun empleado mostramos que no hay y si hay mostramos encabezado de tabla
+                echo "<h1>No hay ningun usuario</h1>";
+            }else{
+                ?>
+                <tr>
+                    <th>DNI</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>TIPO EMPLEADO</th>
+                    <th>MODIFICAR USUARIO</th>
+                    <th>ELIMINAR USUARIO</th>
+                </tr>
+                 <?php
+            }
+        }
         ?>
-        <tr>
-            <td class="tdempleados"><?php echo "{$row['nombre_emp']}";?></td>
-            <td class="tdempleados"><?php echo "{$row['apellido_emp']}";?></td>
-            <td class="tdempleados"><?php echo "{$row['email_emp']}";?></td>
-            <td class="tdempleados"><?php echo "{$row['tipo_emp']}";?></td>
-            <td class="tdempleados"><button class="botonmodif" onclick="location.href='../view/modificarempleado.php?id_emp=<?php echo $row['id_emp']; ?>'">Modificar usuario</button></td>
-            <td class="tdempleados"><button class="botoneliminar" onclick="location.href='../process/eliminarempleado.proc.php?id_emp=<?php echo $row['id_emp']; ?>'">Eliminar usuario</button></td>
-        </tr>
-        <?php } ?>
-    </table>
+            <?php
+            //Mostramos todos los datos
+                foreach ($empleados as $row) {
+            ?>
+            <tr>
+                <td><?php echo "{$row['nombre_emp']}";?></td>
+                <td><?php echo "{$row['apellido_emp']}";?></td>
+                <td><?php echo "{$row['email_emp']}";?></td>
+                <td><?php echo "{$row['tipo_emp']}";?></td>
+                <td><button class="boton_modificar_user" onclick="location.href='../view/modificarempleado.php?id_emp=<?php echo $row['id_emp']; ?>'">Modificar usuario</button></td>
+                <td><button class="boton_eliminar_user" onclick="location.href='../process/eliminarempleado.proc.php?id_emp=<?php echo $row['id_emp']; ?>'">Eliminar usuario</button></td>
+            </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 </html>
 

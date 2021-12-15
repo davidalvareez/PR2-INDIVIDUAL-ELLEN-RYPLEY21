@@ -19,27 +19,30 @@
     <script src="../js/validacion.js"></script>
     <title>Modificar</title>
 </head>
-<body class="fondoimg2">
-    <div class="contenido">
-        <div class="row flex-cv">
-            <div class="cuadro_modificar_evento">
-                <form class="formulario_inscripcion"  action="../process/crearmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validarCrearMesa()">
-                    <h1 class="h1login">Formulario crear evento</h1>
+<body class="login">
+    <table class="contenedor_botones_principales_sala">
+        <td>
+            <button class="boton_sala" onclick="location.href='../view/gestion_mesas.php'">Volver gestion mesas</button>
+        </td>
+    </table>
+        <div class="row flex-cv">b
+            <div class="cuadro_formulario_mesa_user">
+                <form action="../process/crearmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validarCrearMesa()">
+                    <h1 class="h1login">Formulario crear mesa</h1>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="text" id="capacidad" name="capacidad" placeholder="Introduce la capacidad de la mesa..."/>
+                            <input class="input_login" type="text" id="capacidad" name="capacidad" placeholder="Introduce la capacidad de la mesa..."/>
                         </div>
                         <br>
                         <div class="form-element">
-                            <select class="inputlogin" id="estado" name="estado">
-                                <option value="Libre">Libre</option>
-                                <option value="Ocupada">Ocupada</option>
+                            <select class="input_login" id="estado" name="estado">
+                                <option value="Activa">Activa</option>
                                 <option value="Mantenimiento">Mantenimiento</option>
                             </select>
                         </div>
                         <br>
                         <div class="form-element">
-                            <select class="inputlogin" id="nombresala" name="nombresala">
+                            <select class="input_login" id="nombresala" name="nombresala">
                                 <option value="1">Sala 2</option>
                                 <option value="2">Sala 4</option>
                                 <option value="3">Sala 6</option>
@@ -50,13 +53,12 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="file" id="img" name="img" placeholder="Introduce la foto de la mesa"/>
+                            <input class="input_login" type="file" id="img" name="img" placeholder="Introduce la foto de la mesa"/>
                         </div>
                         <br>
-                    <button class="botonlogin" type="submit" name="crear" value="crear">Crear mesa</button>
+                    <button class="boton_login" type="submit" name="crear" value="crear">Crear mesa</button>
                     <br><br>
                 </form>
-                <button class="botonloginvolver" onclick="location.href='../view/gestion_mesas.php'" type="submit" name="volver" value="volver">Volver a la lista de mesas</button>
             </div>
         </div>
     </div>

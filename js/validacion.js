@@ -82,3 +82,8 @@ function validarCrearMesa() {
         return true;
     }
 }
+
+function yaReservado() {
+    alert('Hora no disponible');
+    location.href = '../view/control_sala.php'
+}

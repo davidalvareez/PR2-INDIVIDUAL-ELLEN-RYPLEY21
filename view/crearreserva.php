@@ -32,7 +32,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="time" step= "3600" id="horainicio" name="horainicio" placeholder="Introduce la hora de la reserva..."/>
+                            <input class="inputlogin" type="time" step= "3600" max="23:00" min="13:00" id="horainicio" name="horainicio" placeholder="Introduce la hora de la reserva..."/>
                             <input type="hidden" name="id_mesa" value="<?php echo $id_mesa; ?>">
                         </div>
                         <br>
