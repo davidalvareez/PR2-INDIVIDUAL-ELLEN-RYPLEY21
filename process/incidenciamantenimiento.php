@@ -14,7 +14,7 @@
 
     <body class="fondosala2">
     <button class="botonessala" onclick="location.href='../view/control_administrador.php'">Volver a la sala de control</button>
-    <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
+    <button class="botonessala" onclick="location.href='../process/logout.proc.php'">Logout</button>
         <br> <br>
         <div class="row flex-cv">
              <div class="cuadro-figura">

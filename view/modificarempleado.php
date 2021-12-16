@@ -1,20 +1,17 @@
 <?php
-    require_once '../services/conexion.php';
-    
+    include '../services/conexion.php';
     session_start();
-    //Evitar que accedan desde url ya que es pagina admin
-    /*if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }*/
-    if (empty($_GET['id_emp'])){
-        header("location:../view/gestion_usuarios.php");
-    }else{
-        $id=$_GET['id_emp'];
-        $sentencia=$pdo->prepare("SELECT * FROM tbl_empleado WHERE id_emp=:id_emp");
-        $sentencia->BindParam(":id_emp",$id);
-        $sentencia->execute();
-        $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-    }
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
+        if (empty($_GET['id_emp'])){
+            header("location:../view/gestion_usuarios.php");
+        }else{
+            $id=$_GET['id_emp'];
+            $sentencia=$pdo->prepare("SELECT * FROM tbl_empleado WHERE id_emp=:id_emp");
+            $sentencia->BindParam(":id_emp",$id);
+            $sentencia->execute();
+            $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,3 +71,8 @@
     </div>
 </body>
 </html>
+<?php
+}else{
+    header('Location: ../view/login.php');
+}
+

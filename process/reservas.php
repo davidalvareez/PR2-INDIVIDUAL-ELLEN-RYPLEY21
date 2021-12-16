@@ -13,14 +13,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/validacion.js"></script>
     <title>Historial reservas mesa <?php echo $id_mesa ?></title>
 </head>
 <body class="reserva">
     <div class="contenedor_botones_principales_sala">
         <button class="boton_sala" onclick="location.href='../process/sala.php?id_sala=<?php echo $id_sala ?>'">Volver a la sala</button>
         <button class="boton_sala" onclick="location.href='../process/logout.proc.php'">Logout</button>  
-        <button class="boton_sala" onclick="location.href='../view/crearreserva.php?id_mesa= <?php echo $id_mesa?>'">Crear reserva</button>          
+        <button class="boton_sala" onclick="location.href='../view/crearreserva.php?id_mesa= <?php echo $id_mesa?>&id_sala=<?php echo $id_sala?>'">Crear reserva</button>          
     </div>
     <h2 class="h1_sala">INFORMACIÓN RESERVA MESA <?php echo $id_mesa ?></h2>
     <div class="row flex-cv">
@@ -55,6 +58,11 @@
             </table>
         </div>
     </div>
+    <?php
+    if (!empty($_REQUEST['error'])) {
+        echo "<script>yaReservado();</script>";
+    }
+    ?>
 </body>
 </html>
 <?php

@@ -1,12 +1,8 @@
 <?php
-    require_once '../services/conexion.php';
-    /*
+    include '../services/conexion.php';
     session_start();
-    //Si intentan entrar con la url no podrá acceder ya que no está guardado el tipo de usuario
-    if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }
-    */
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,6 +75,9 @@
             <?php
             //Mostramos todos los datos
                 foreach ($empleados as $row) {
+                    if ($row['nombre_emp']==$_SESSION['nombre']) {
+                        # code...
+                    }else{
             ?>
             <tr>
                 <td><?php echo "{$row['nombre_emp']}";?></td>
@@ -88,9 +87,15 @@
                 <td><button class="boton_modificar_user" onclick="location.href='../view/modificarempleado.php?id_emp=<?php echo $row['id_emp']; ?>'">Modificar usuario</button></td>
                 <td><button class="boton_eliminar_user" onclick="location.href='../process/eliminarempleado.proc.php?id_emp=<?php echo $row['id_emp']; ?>'">Eliminar usuario</button></td>
             </tr>
-            <?php } ?>
+            <?php 
+            }
+        } ?>
         </table>
     </div>
 </body>
 </html>
+<?php
+}else{
+    header('Location: ../view/login.php');
+}
 

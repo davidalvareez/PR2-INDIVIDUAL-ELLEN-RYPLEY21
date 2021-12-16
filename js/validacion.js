@@ -84,6 +84,9 @@ function validarCrearMesa() {
 }
 
 function yaReservado() {
-    alert('Hora no disponible');
-    location.href = '../view/control_sala.php'
+    swal({
+        title: "Error",
+        text: "Ya se ha reservado a esa hora, por favor, escoge otra",
+        icon: "error",
+    })
 }

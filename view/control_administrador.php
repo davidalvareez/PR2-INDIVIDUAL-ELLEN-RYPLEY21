@@ -1,3 +1,9 @@
+<?php
+    include '../services/conexion.php';
+    session_start();
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,3 +29,7 @@
     </div>
 </body>
 </html>
+<?php
+    }else{
+        header('Location: ../view/login.php');
+    }

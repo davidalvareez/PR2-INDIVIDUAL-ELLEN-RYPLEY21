@@ -1,14 +1,11 @@
 <?php
-/*
-    require_once '../services/conexion.php';
+    include '../services/conexion.php';
     session_start();
-    if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }
-    */
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
     $id_mesa=$_GET['id_mesa'];
+    $id_sala=$_GET['id_sala'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +25,13 @@
                     <h1 class="h1login">Formulario crear reserva</h1>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="date" id="fecha" name="fecha" placeholder="Introduce la fecha de la reserva..."/>
+                            <input class="inputlogin" type="date" id="fecha" min="<?php $fechasistema=date('Y-m-d'); echo $fechasistema ?>" name="fecha" placeholder="Introduce la fecha de la reserva..."/>
                         </div>
                         <br>
                         <div class="form-element">
                             <input class="inputlogin" type="time" step= "3600" max="23:00" min="13:00" id="horainicio" name="horainicio" placeholder="Introduce la hora de la reserva..."/>
                             <input type="hidden" name="id_mesa" value="<?php echo $id_mesa; ?>">
+                            <input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>">
                         </div>
                         <br>
                     <button class="botonlogin" type="submit" name="crear" value="crear">Crear reserva</button>
@@ -45,3 +43,7 @@
     </div>
 </body>
 </html>
+<?php
+}else{
+    header('Location: ../view/login.php');
+}

@@ -1,20 +1,17 @@
 <?php
-    require_once '../services/conexion.php';
-    
+    include '../services/conexion.php';
     session_start();
-    //Evitar que accedan desde url ya que es pagina admin
-    /*if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }*/
-    if (empty($_GET['id_mesa'])){
-        header("location:../process/gestion_mesas.php");
-    }else{
-        $id=$_GET['id_mesa'];
-        $sentencia=$pdo->prepare("SELECT capacidad, estado, id_sala FROM tbl_mesa WHERE id_mesa=:id_mesa");
-        $sentencia->BindParam(":id_mesa",$id);
-        $sentencia->execute();
-        $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-    }
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
+        if (empty($_GET['id_mesa'])){
+            header("location:../process/gestion_mesas.php");
+        }else{
+            $id=$_GET['id_mesa'];
+            $sentencia=$pdo->prepare("SELECT capacidad, estado, id_sala FROM tbl_mesa WHERE id_mesa=:id_mesa");
+            $sentencia->BindParam(":id_mesa",$id);
+            $sentencia->execute();
+            $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -174,3 +171,7 @@
     </div>
 </body>
 </html>
+<?php
+}else{
+    header('Location: ../view/login.php');
+}

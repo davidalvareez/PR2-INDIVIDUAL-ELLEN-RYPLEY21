@@ -1,11 +1,8 @@
 <?php
-    require_once '../services/conexion.php';
-    
+    include '../services/conexion.php';
     session_start();
-    //Evitar que accedan desde url ya que es pagina admin
-    /*if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }*/
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,3 +49,7 @@
     </div>
 </body>
 </html>
+<?php
+}else{
+    header('Location: ../view/login.php');
+}

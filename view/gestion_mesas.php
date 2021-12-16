@@ -1,12 +1,8 @@
 <?php
-    require_once '../services/conexion.php';
-    /*
+    include '../services/conexion.php';
     session_start();
-    //Si intentan entrar con la url no podrá acceder ya que no está guardado el tipo de usuario
-    if (!$_SESSION['tipo_user']==2) {
-        header("location:login.php");
-    }
-    */
+    /* Controla que la sesión esté iniciada */
+    if (!$_SESSION['nombre']=="") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,4 +87,7 @@
     </div>
 </body>
 </html>
-
+<?php
+}else{
+    header('Location: ../view/login.php');
+}
