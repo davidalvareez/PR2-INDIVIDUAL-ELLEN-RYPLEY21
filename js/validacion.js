@@ -83,6 +83,37 @@ function validarCrearMesa() {
     }
 }
 
+function validarCrearReserva() {
+    let fecha = document.getElementById('fecha').value;
+    let horainicio = document.getElementById('horainicio').value;
+
+    if (fecha == '' || horainicio == '') {
+        swal({
+            title: "Error",
+            text: "Tienes que rellenar todos los datos",
+            icon: "error",
+        });
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validarModificarIncidencia() {
+    let descripcion = document.getElementById('descripcion').value;
+
+    if (descripcion == '') {
+        swal({
+            title: "Error",
+            text: "Tienes que rellenar todos los datos",
+            icon: "error",
+        });
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function yaReservado() {
     swal({
         title: "Error",

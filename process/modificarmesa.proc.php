@@ -12,7 +12,7 @@ if(empty($_POST['id'])){
     $path="../img/".$_FILES['img']['name']; 
 
     if (move_uploaded_file($_FILES['img']['tmp_name'],$path)) {
-        $sentencia=$pdo->prepare("UPDATE tbl_mesa SET capacidad='{$capacidad}',estado='{$estadomesa}', img= '{$path}', id_sala='{$id_sala}' WHERE id_mesa='{$id}'");
+        $sentencia=$pdo->prepare("UPDATE tbl_mesa SET capacidad='{$capacidad}', estado='{$estadomesa}', img= '{$path}', id_sala='{$id_sala}' WHERE id_mesa='{$id}'");
         $sentencia->execute();
         header("location:../view/gestion_mesas.php");
     }else{

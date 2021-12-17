@@ -22,10 +22,10 @@
 <body class="reserva">
     <div class="contenedor_botones_principales_sala">
         <button class="boton_sala" onclick="location.href='../process/sala.php?id_sala=<?php echo $id_sala ?>'">Volver a la sala</button>
-        <button class="boton_sala" onclick="location.href='../process/logout.proc.php'">Logout</button>  
         <button class="boton_sala" onclick="location.href='../view/crearreserva.php?id_mesa= <?php echo $id_mesa?>&id_sala=<?php echo $id_sala?>'">Crear reserva</button>          
+        <button class="boton_sala" onclick="location.href='../process/logout.proc.php'">Logout</button>  
     </div>
-    <h2 class="h1_sala">INFORMACIÓN RESERVA MESA <?php echo $id_mesa ?></h2>
+    <h2 class="h1_sala">Información de las reservas mesa <?php echo $id_mesa ?></h2>
     <div class="row flex-cv">
         <div class="cuadro_reserva">
             <?php
@@ -36,7 +36,7 @@
                 <tr>
                     <th>FECHA RESERVA</th>
                     <th>HORA INICIO RESERVA</th>
-                    <th>HORA FIN RESERVA</th>
+                    <th>HORA FINAL RESERVA</th>
                     <th>ELIMINAR RESERVA</th>
                 </tr>
                 <?php

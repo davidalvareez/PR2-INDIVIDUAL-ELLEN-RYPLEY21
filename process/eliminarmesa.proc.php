@@ -1,4 +1,5 @@
 <?php
+//transacciones SQL en ejecucciones, no hace falta en las que sean directas(?)
 require_once '../services/conexion.php';
 session_start();
 if (empty($_GET['id_mesa'])) {

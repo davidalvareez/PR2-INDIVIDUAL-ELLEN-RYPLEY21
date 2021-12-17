@@ -18,7 +18,7 @@
     <body class="control_sala">
         <div class="row flex-cv">
             <div class="cuadro_control_sala">
-                <h1 class="h1_control_sala">Panel de control de salas</h1>
+                <h1 class="h1_control_sala">Panel de control de las salas</h1>
                 <div class="column-2">
                     <button class="boton_control_sala" OnClick="location.href='../process/sala.php?id_sala=1'"><h1>Sala 2</h1></button>
                 </div>

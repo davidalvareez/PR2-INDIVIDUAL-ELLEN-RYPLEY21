@@ -1,8 +1,9 @@
 <?php
 require_once '../services/conexion.php';
 session_start();
-if(empty($GET['id'])){
+if(empty($_REQUEST['id'])){
     header("location: ../view/gestion_usuarios.php");
+
 }else{
     $id=$_POST['id'];
     $nombre=$_POST['nombre'];

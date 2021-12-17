@@ -22,14 +22,18 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/validacion.js"></script>
-    <title>Modificar sala</title>
+    <title>Modificar mesa</title>
 </head>
-<body class="fondoimg2">
-    <div class="contenido">
+<body class="login">
+    <table class="contenedor_botones_principales_sala">
+        <td>
+            <button class="boton_sala" onclick="location.href='../view/gestion_mesas.php'">Volver a la lista de las mesas</button>
+        </td>
+    </table>
         <div class="row flex-cv">
-            <div class="cuadro_modificar_voluntario">
+            <div class="cuadro_formulario_mesa_user">
                 <form class="formulario_inscripcion"  action="../process/modificarmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validarModificarMesa()">
-                    <h1 class="h1login">¡Formulario modificar sala!</h1>
+                    <h1 class="h1_login">Modificar una mesa</h1>
                         <br>
                         <?php
                             if (empty($comprobacion)) {
@@ -46,45 +50,15 @@
                             }
                         ?>
                         <div class="form-element">
-                            <input class="inputlogin" type="text" id="capacidad" name="capacidad" value="<?php echo $capacidad; ?>" placeholder="Introduce la capacidad de la mesa..."/>
+                            <input class="input_login" type="text" id="capacidad" name="capacidad" value="<?php echo $capacidad; ?>" placeholder="Introduce la capacidad de la mesa..."/>
                         </div>
                         <br><br>
-                        <div class="form-element">
-                            <?php 
-                                if ($estado == "Libre") {
-                                    ?>
-                                    <select class="inputlogin" id="estadomesa" name="estadomesa">
-                                        <option selected value="<?php echo $estado; ?>">Estado actual (<?php echo $estado; ?>)</option>   
-                                        <option value="Ocupada">Ocupada</option>
-                                        <option value="Mantenimiento">Mantenimiento</option>
-                                    </select>       
-                            <?php
-                                }else if ($estado == "Ocupado"){
-                                    ?>
-                                    <select class="inputlogin" id="estadomesa" name="estadomesa">
-                                        <option selected value="<?php echo $estado; ?>">Estado actual (<?php echo $estado; ?>)</option>   
-                                        <option value="Libre">Libre</option>
-                                        <option value="Mantenimiento">Mantenimiento</option>
-                                    </select>
-                            <?php   
-                                }else{
-                                    ?>
-                                    <select class="inputlogin" id="estadomesa" name="estadomesa">
-                                        <option selected value="<?php echo $estado; ?>">Estado actual (<?php echo $estado; ?>)</option>   
-                                        <option value="Libre">Libre</option>
-                                        <option value="Mantenimiento">Ocupado</option>
-                                    </select>
-                            <?php
-                                }
-                            ?>
-                        </div>
-                        <br>
                         <div class="form-element"> 
                             <?php
                                 switch ($idsala) {
                                     case 1:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="1">Sala actual (Sala 2)</option>
                                                 <option value="2">Sala 4</option>
                                                 <option value="3">Sala 6</option>
@@ -96,7 +70,7 @@
                                         break;
                                     case 2:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="2">Sala actual (Sala 4)</option>
                                                 <option value="1">Sala 2</option>
                                                 <option value="3">Sala 6</option>
@@ -108,7 +82,7 @@
                                         break; 
                                     case 3:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="3">Sala actual (Sala 6)</option>
                                                 <option value="1">Sala 2</option>
                                                 <option value="2">Sala 4/option>
@@ -120,7 +94,7 @@
                                         break;  
                                     case 4:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="4">Sala actual (Sala 8)</option>
                                                 <option value="1">Sala 2</option>
                                                 <option value="2">Sala 4</option>
@@ -132,7 +106,7 @@
                                         break;
                                     case 5:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="5">Sala actual (Sala 10)</option>
                                                 <option value="1">Sala 2</option>
                                                 <option value="2">Sala 4</option>
@@ -144,7 +118,7 @@
                                         break;
                                     case 6:
                                         ?>
-                                            <select class="inputlogin" id="nombresala" name="nombresala">
+                                            <select class="input_login" id="nombresala" name="nombresala">
                                                 <option selected value="6">Sala actual (Sala Reservado)</option>
                                                 <option value="1">Sala 2</option>
                                                 <option value="2">Sala 4</option>
@@ -157,15 +131,15 @@
                                 }
                             ?>
                         </div>
+                        <br><br>
                         <div class="form-element">
-                            <input class="inputlogin" type="file" id="img" name="img" placeholder="Introduce la foto de la mesa"/>
-                            <input class="inputlogin" type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input class="input_login" type="file" id="img" name="img" placeholder="Introduce la foto de la mesa"/>
+                            <input class="input_login" type="hidden" name="id" value="<?php echo $id; ?>">
                         </div>
                         <br><br>
-                    <button class="botonlogin" type="submit" name="enviar" value="enviar">Modificar mesa</button>
+                    <button class="boton_login" type="submit" name="enviar" value="enviar">Modificar mesa</button>
                     <br><br><br>
                 </form>
-                <button class="botonloginvolver" onclick="location.href='../view/gestion_mesas.php'" type="submit" name="volver" value="volver">Volver a la lista de mesas</button>
             </div>
         </div>
     </div>

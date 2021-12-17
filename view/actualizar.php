@@ -11,16 +11,16 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="../css/styles.css">
-            <link rel="stylesheet" href="../css/stylesextras.css">
+            <script src="../js/validacion.js"></script>
             <title>Formulario actualizar</title>
         </head>
-        <body class="fondosala2">
-        <form action="../process/modificar.php" method="get">
-                    <h1 class="titulomodif">Modificar la descripcion</h1>
-                    <input class="inputactualizar" type="text" name="descripcion" id="total" placeholder="Escribe la descripcion">
+        <body class="sala">
+        <form action="../process/modificar.php" method="get" onsubmit="return validarModificarIncidencia()">
+                    <h1 class="h1_login">Modificar la descripcion</h1>
+                    <input class="input_login" type="text" name="descripcion" id="descripcion" placeholder="Escribe la descripcion">
                     <input type="hidden" name="id_incidencia" value="<?php echo $id_incidencia ;?>">
                     <br><br>
-                    <input class= "botonessala" type="submit" value="Enviar" name="submit">
+                    <input class= "boton_sala" type="submit" value="Enviar" name="submit">
                 </form>
 
         </body>

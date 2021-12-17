@@ -13,18 +13,18 @@
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/validacion.js"></script>
-    <title>Modificar</title>
+    <title>Crear mesa</title>
 </head>
 <body class="login">
     <table class="contenedor_botones_principales_sala">
         <td>
-            <button class="boton_sala" onclick="location.href='../view/gestion_mesas.php'">Volver gestion mesas</button>
+            <button class="boton_sala" onclick="location.href='../view/gestion_mesas.php'">Volver a la lista de las mesas</button>
         </td>
     </table>
-        <div class="row flex-cv">b
+        <div class="row flex-cv">
             <div class="cuadro_formulario_mesa_user">
                 <form action="../process/crearmesa.proc.php" method="post" enctype="multipart/form-data" onsubmit="return validarCrearMesa()">
-                    <h1 class="h1login">Formulario crear mesa</h1>
+                    <h1 class="h1login">Crear una nueva mesa</h1>
                         <br>
                         <div class="form-element">
                             <input class="input_login" type="text" id="capacidad" name="capacidad" placeholder="Introduce la capacidad de la mesa..."/>

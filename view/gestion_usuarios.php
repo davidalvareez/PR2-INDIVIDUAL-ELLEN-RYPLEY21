@@ -16,16 +16,16 @@
 <body class="sala">
     <table class="contenedor_botones_principales_sala">
         <td>
-            <button class="boton_sala" onclick="location.href='../view/control_administrador.php'">Volver al panel control</button>
+            <button class="boton_sala" onclick="location.href='../view/control_administrador.php'">Volver al panel de control</button>
             <button class="boton_sala" onclick="location.href='../view/crearempleado.php'">Crear usuario</button>
-            <button class="boton_sala" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
+            <button class="boton_sala" onclick="location.href='../process/logout.proc.php'">Logout</button>  
         </td>
     </table>
-    <h1 class="h1_sala">LISTA DE PARTICIPANTES</h1>
+    <h1 class="h1_sala">Lista de todos los usuarios</h1>
     <div class="cuadro_users">
         <form action="../view/gestion_usuarios.php" method="POST">
-            <input type="text" class="input_filtro" name="nombre" placeholder="Indica el nombre">
-            <input type="text" class="input_filtro" name="apellido" placeholder="Indica el apellido">
+            <input type="text" class="input_filtro" name="nombre" placeholder="Indica el nombre...">
+            <input type="text" class="input_filtro" name="apellido" placeholder="Indica el apellido...">
             <input type="submit" class="boton_filtrar_user"value="Filtrar" name="filtrar"> 
         </form>
         <table class="tabla_users">
@@ -41,10 +41,10 @@
             }else{
                 ?>
                 <tr>
-                    <th>DNI</th>
                     <th>NOMBRE</th>
                     <th>APELLIDO</th>
-                    <th>TIPO EMPLEADO</th>
+                    <th>CORREO</th>
+                    <th>TIPO DE USUARIO</th>
                     <th>MODIFICAR USUARIO</th>
                     <th>ELIMINAR USUARIO</th>
                 </tr>
@@ -61,10 +61,10 @@
             }else{
                 ?>
                 <tr>
-                    <th>DNI</th>
                     <th>NOMBRE</th>
                     <th>APELLIDO</th>
-                    <th>TIPO EMPLEADO</th>
+                    <th>CORREO</th>
+                    <th>TIPO DE USUARIO</th>
                     <th>MODIFICAR USUARIO</th>
                     <th>ELIMINAR USUARIO</th>
                 </tr>
